@@ -1,0 +1,1 @@
+Gyakorlatvezető: Nagy Sára
