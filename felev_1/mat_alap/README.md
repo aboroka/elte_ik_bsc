@@ -1,0 +1,1 @@
+Gyakorlatvezető: Lőrinczné Dr. Takáts Marcella

@@ -1,0 +1,1 @@
+Gyakorlatvezető: Klettner Zoltán
