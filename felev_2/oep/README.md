@@ -1,0 +1,1 @@
+Gyakorlatvezető: Császár Péter János, Kornidesz Máté
