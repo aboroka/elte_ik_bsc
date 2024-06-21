@@ -1,0 +1,14 @@
+﻿1
+321 231
+Drakónia-negyed 3
+diadaliv 123 432 12 1934
+muzeum 321 231 4 1982
+var 264 211 10 1812
+Csillagfény-kertek 2
+var 323 111 8 1834
+katedralis 432 221 2 1952
+Kristálypalota-kerület 4
+var 242 168 7 1810
+katedralis 666 221 9 1711
+diadaliv 333 215 4 1901
+muzeum 356 853 4 1966

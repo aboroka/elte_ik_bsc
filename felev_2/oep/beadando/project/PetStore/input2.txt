@@ -1,0 +1,8 @@
+1 allat
+horcsog fiatal 01 piros 1000
+2 partner
+beszerzo p1 k1
+elado p2 k1
+2 szamla
+beszerzesi k1 p1 01 2023.01.01. sz1
+eladasi k1 p2 01 2023.01.04. sz1

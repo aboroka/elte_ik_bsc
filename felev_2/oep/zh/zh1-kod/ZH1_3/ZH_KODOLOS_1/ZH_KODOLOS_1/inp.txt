@@ -1,0 +1,5 @@
+Magyar-Nagydíj 2022.08.03 1 Esteban Ocon 25 Alpine 2 Fernando Alonso 18 Alpine 3 Lewis Hamilton 15 Mercedes
+Brazil-Nagydíj 2022.08.17 1 George Russell 25 Mercedes 2 Fernando Alonso 18 Alpine 3 Alexander Albon 15 Williams
+Bahreini-Nagydíj 2022.08.10 1 Fernando Alonso 25 Alpine 2 Esteban Ocon 18 Alpine 3 Lewis Hamilton 15 Mercedes
+Kanadai-Nagydíj 2022.08.24 1 Lance Stroll 25 Aston-Martin 2 Fernando Alonso 18 Alpine 3 Esteban Ocon 15 Alpine
+Francia-Nagydíj 2022.08.24 1 Mick Schumacher 25 Haas 2 Kevin Magnussen 18 Haas
