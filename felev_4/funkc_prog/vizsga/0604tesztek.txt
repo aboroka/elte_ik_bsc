@@ -1,0 +1,90 @@
+keepEvenIndexes [1,2,3,4,5] [6,7,8,9,10] == [2,7,4,9]
+keepEvenIndexes ["alma", "körte", "barack", "szilva"] ["citrom", "narancs", "mandarin", "eper"] == ["körte", "narancs", "szilva", "eper"]
+keepEvenIndexes [10,20,30,40] [50,60,70] == [20,60,40]
+keepEvenIndexes [1,2,3] [] == [2]
+keepEvenIndexes [] [] == []
+keepEvenIndexes [] [2.3,5.6,2.4,7.8] == [5.6,7.8]
+keepEvenIndexes [True] [False] == []
+take 11 (keepEvenIndexes [1..] [1,3..]) == [2,3,4,7,6,11,8,15,10,19,12]
+take 14 (keepEvenIndexes [1..] [10,20,30,40]) == [2,20,4,40,6,8,10,12,14,16,18,20,22,24]
+take 8 (keepEvenIndexes [9,7,3,2] [10..]) == [7,11,2,13,15,17,19,21]
+
+isIncreasing []
+isIncreasing [1]
+isIncreasing ["abc"]
+isIncreasing [2,3]
+not (isIncreasing [2,2])
+not (isIncreasing [3,2])
+isIncreasing ['a','b','c'] 
+isIncreasing [Just (-1),Just 1] 
+not (isIncreasing [1,2,3,2,5,6,7])
+isIncreasing [-3,-2,-1]
+not (isIncreasing [x | y <- [1..], x <- [1..y]])
+
+sumLargerBefore [1,-1]
+not (sumLargerBefore [-1,1])
+not (sumLargerBefore [1,-1,1])
+not (sumLargerBefore [1,3,-1,1,5])
+sumLargerBefore [1,3,-1,1,-4,5]
+sumLargerBefore [7,1,3,-1,2,5]
+not (sumLargerBefore [-3])
+sumLargerBefore [-3,-4,3]
+
+sumTuples [] == (0,0)
+sumTuples [(1,2), (1,2)] == (2,4)
+sumTuples [(1,2), (1,1), (10,11)] == (12,14)
+sumTuples (replicate 10 (1,1)) == (10,10)
+sumTuples [(3,2), (1,3), (-4,5), (9, -20)] == (9,-10)
+
+aliveTrees [(5, Just "Birch"), (1, Nothing)] == [(6, Just "Birch")]
+aliveTrees [] == []
+aliveTrees [(0, Just "Birch"), (1, Nothing)] == [(1, Just "Birch")]
+aliveTrees [(5, Just "Birch"), (2, Just "Oak"), (3, Just "Oak"),(3, Just "Birch")] == [(6, Just "Birch"), (3, Just "Oak"), (4, Just "Oak"), (4, Just "Birch")]
+take 10 (aliveTrees (zip [0..] (cycle [Just "Oak", Nothing, Just "Birch", Just "Beech"]))) == [(1,Just "Oak"),(3,Just "Birch"),(4,Just "Beech"),(5,Just "Oak"),(7,Just "Birch"),(8,Just "Beech"),(9,Just "Oak"),(11,Just "Birch"),(12,Just "Beech"),(13,Just "Oak")]
+
+separate 4 1 [] == []
+separate 2 2 [2,3,4] == [[2,3],[4]]
+separate 2 3 [1,2,3,4,5,6,7,8,9,10] == [[1,2],[4,5],[7,8],[10]]
+take 4 (separate 3 4 [1..]) == [[1,2,3],[5,6,7],[9,10,11],[13,14,15]]
+separate 2 1 ["alma","krumpli","paprika"] == [["alma","krumpli"],["krumpli","paprika"],["paprika"]]
+separate 2 5 [2] == [[2]]
+take 3 (separate 0 3 [2..]) == [[],[],[]]
+take 3 (separate 2 1 [0,5..]) == [[0,5],[5,10],[10,15]]
+separate 2 4 "krumplisteszta" == ["kr","pl","te","ta"]
+take 3 (separate 2 0 [2,3,4]) == [[2,3],[2,3],[2,3]]
+
+(Ponty 5312) == (Ponty 5312)
+(Karasz 5312) /= (Ponty 5312)
+(Ponty 5312) /= (Ponty 5311)
+(Keszeg 120) == (Keszeg 120) 
+(Keszeg 120) /= (Keszeg 129) 
+(Keszeg 120) /= (Karasz 120) 
+(Keszeg 1230) == (Keszeg 1230) 
+(Keszeg 1230) /= (Harcsa 11230) 
+(Karasz 652) == (Karasz 652)
+(Harcsa 35456) == (Harcsa 35456)
+(Versenyzo "A" 1 [(Ponty 5432)]) == (Versenyzo "A" 1 [(Ponty 5432)])
+(Versenyzo "A" 1 [(Keszeg 5432)]) /= (Versenyzo "A" 1 [(Ponty 5432)])
+(Versenyzo "A" 1 [(Ponty 5432)]) /= (Versenyzo "B" 1 [(Ponty 5432)])
+(Versenyzo "A" 1 [(Ponty 5432)]) /= (Versenyzo "A" 2 [(Ponty 5432)])
+(Versenyzo "B" 23 [(Harcsa 11123)]) == (Versenyzo "B" 23 [(Harcsa 11123)]) 
+
+summarize [] == []
+summarize [(Versenyzo "A" 1 [(Keszeg 5), (Harcsa 7)])] == [("A",1,5)]
+summarize [(Versenyzo "A" 1 [(Keszeg 5), (Harcsa 7)]),(Versenyzo "B" 2 [(Karasz 2), Harcsa 12]),(Versenyzo "C" 3 [(Karasz 5),(Keszeg 8),(Keszeg 9)])] == [("A",1,5),("B",2,2),("C",3,22)]
+summarize [(Versenyzo "A" 3 [(Keszeg 5), (Harcsa 7)]),(Versenyzo "B" 1 [(Karasz 2), Ponty 2]),(Versenyzo "C" 2 [(Karasz 5),(Keszeg 8),(Karasz 10)])] == [("A",3,5),("B",1,4),("C",2,23)]
+summarize [(Versenyzo "C" 4 [(Harcsa 5), (Ponty 3)]),(Versenyzo "B" 5 [(Keszeg 11), Karasz 13]),(Versenyzo "A" 1 [(Harcsa 4),(Ponty 5),(Keszeg 21)])] == [("C",4,3),("B",5,24),("A",1,26)]
+summarize [(Versenyzo "AB" 4 []),(Versenyzo "AC" 5 [(Ponty 5)]),(Versenyzo "AD" 10 [(Harcsa 1),(Harcsa 2),(Ponty 3)])] == [("AB",4,0),("AC",5,5),("AD",10,3)]
+summarize [(Versenyzo "AAA" 1 []), (Versenyzo "AAB" 0 []), (Versenyzo "AAC" 4 [])] == [("AAA",1,0),("AAB",0,0),("AAC",4,0)]
+summarize [(Versenyzo "A" 1 [Keszeg 5, Harcsa 7, Keszeg 9, Karasz 8, Ponty 10, Harcsa 10, Harcsa 12, Harcsa 7, Karasz 7]),(Versenyzo "B" 1 [Karasz 2, Harcsa 12, Karasz 2, Harcsa 12, Karasz 2, Harcsa 12, Ponty 10]),(Versenyzo "C" 3 [Harcsa 10, Harcsa 11, Harcsa 10, Harcsa 30, Harcsa 110])] == [("A",1,39),("B",1,16),("C",3,0)]
+summarize [(Versenyzo "A" 1 [Keszeg 5, Ponty 11, Harcsa 7, Keszeg 9, Karasz 8, Ponty 10, Harcsa 10, Harcsa 12, Harcsa 7, Karasz 7]),(Versenyzo "B" 1 [Karasz 2, Harcsa 12, Karasz 2, Harcsa 12, Karasz 2, Harcsa 12, Ponty 10, Ponty 23]),(Versenyzo "C" 3 [Harcsa 10, Harcsa 11, Harcsa 10, Harcsa 30, Harcsa 110]),(Versenyzo "E" 4 []),(Versenyzo "D" 6 [Harcsa 100, Keszeg 10, Ponty 11, Karasz 12])] == [("A",1,50),("B",1,39),("C",3,0),("E",4,0),("D",6,33)]
+
+evenDigits 0 == 1
+evenDigits 1 == 0
+evenDigits 11 == 0
+evenDigits 4 == 1
+evenDigits 24 == 2
+evenDigits 43217843 == 4
+evenDigits (-245) == 2
+evenDigits 1234567890 == 5
+evenDigits (-1234567890) == 5

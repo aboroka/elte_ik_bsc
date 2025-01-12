@@ -1,0 +1,1 @@
+Gyakorlatvezető: Lukács Dániel

@@ -1,0 +1,31 @@
+costInMoney ([], 0) [] == 0
+
+costInMoney ([], 3) [] == 3
+
+costInMoney ([(Wood 1)], 0) [(Materials "Logging camp" ([], 1) (Wood 1))] == 0
+
+costInMoney ([(Wood 1)], 0) [(Materials "Sawmill" ([], 2) (Wood 2))] == 0
+
+costInMoney ([], 0) [(Military "Circus" ([(Stone 2), (Clay 2)], 0) 2),(Civilian "Statue" ([(Clay 2)], 0) 4),(Civilian "Aqueduct" ([(Stone 3)], 0) 5),(Military "Horse breeders" ([(Wood 1), (Clay 1)], 0) 1),(Materials "Brickyard" ([], 2) (Clay 2))] == 0
+
+costInMoney ([(Clay 1), (Stone 1), (Glass 1), (Papyrus 1)], 0) [(Materials "Clay pool" ([], 0) (Clay 1)),(Materials "Stone pit" ([], 1) (Stone 1)),(Materials "Glassworks" ([], 1) (Glass 1)),(Civilian "Aqueduct" ([(Stone 3)], 0) 5),(Materials "Dying room" ([], 0) (Papyrus 1))] == 0
+
+costInMoney ([(Clay 1), (Stone 1), (Glass 1), (Papyrus 1)], 5) [(Materials "Clay pool" ([], 0) (Clay 1)),(Materials "Stone pit" ([], 1) (Stone 1)),(Materials "Glassworks" ([], 1) (Glass 1)),(Materials "Dying room" ([], 0) (Papyrus 1))] == 5
+
+costInMoney ([(Wood 1), (Clay 1)], 0) [(Commercial "Clay reserve" ([], 3) 0 (Price (Clay 0))), (Commercial "Wood reserve" ([], 3) 0 (Price (Wood 0))),(Civilian "Aqueduct" ([(Stone 3)], 0) 5)] == 2
+
+costInMoney ([(Clay 3), (Stone 1), (Wood 1), (Glass 1), (Papyrus 1)], 1) [(Commercial "Stone reserve" ([], 3) 0 (Price (Stone 0))),(Commercial "Brewery" ([], 3) 0 (Price (Glass 0))),(Commercial "Clay reserve" ([], 3) 0 (Price (Clay 0)))] == 12
+
+costInMoney ([(Clay 1), (Stone 1), (Wood 1), (Glass 1), (Papyrus 1)], 0) [] == 15
+
+costInMoney ([(Clay 1), (Stone 1), (Wood 1), (Glass 1), (Papyrus 1)], 0) [(Materials "Stone pit" ([], 1) (Stone 1)),(Civilian "Tribunal" ([(Wood 2), (Glass 1)], 0) 5),(Materials "Glass blowers" ([], 0) (Glass 1))] == 9
+
+costInMoney ([(Clay 1), (Stone 1), (Wood 2), (Glass 1), (Papyrus 1)], 1) [(Materials "Logging camp" ([], 1) (Wood 1)),(Materials "Dying room" ([], 0) (Papyrus 1)),(Materials "Brickyard" ([], 2) (Clay 2)),(Materials "Quarry" ([], 0) (Stone 1)),(Civilian "Tribunal" ([(Wood 2), (Glass 1)], 0) 5)] == 7
+
+costInMoney ([(Clay 3), (Stone 1), (Glass 1)], 0) [(Commercial "Wood reserve" ([], 3) 0 (Price (Wood 0))),(Commercial "Wood reserve" ([], 3) 0 (Price (Wood 0))),(Guilds "Moneylenders guild" ([(Stone 2), (Wood 2)], 0) (PointsByCard (Right blankWonderCard) 3)),(Materials "Brickyard" ([], 2) (Clay 2)),(Military "Guard tower" ([], 0) 1),(Commercial "Clay reserve" ([], 3) 0 (Price (Clay 0)))] == 7
+
+costInMoney ([(Clay 1), (Wood 1), (Papyrus 2)], 2) [(Military "Fortifications" ([(Stone 2), (Clay 1), (Papyrus 1)], 0) 2),(Guilds "Builders guild" ([(Stone 2), (Clay 1), (Wood 1), (Glass 1)], 0) (PointsByCard (Right blankWonderCard) 2)),(Materials "Clay pit" ([], 1) (Clay 1)),(Commercial "Customs house" ([], 3) 0 (Price (Papyrus 0))),(Materials "Sawmill" ([], 2) (Wood 2))] == 4
+
+costInMoney ([(Clay 1), (Stone 1), (Wood 1), (Glass 1), (Papyrus 1)], 0) [(Commercial "Stone reserve" ([], 3) 0 (Price (Stone 0))),(Commercial "Clay reserve" ([], 3) 0 (Price (Clay 0))),(Commercial "Wood reserve" ([], 3) 0 (Price (Wood 0))),(Commercial "Customs house" ([], 3) 0 (Price (Papyrus 0))),(Commercial "Brewery" ([], 3) 0 (Price (Glass 0)))] == 5
+
+costInMoney ([(Clay 1), (Stone 1), (Glass 1)], 1) [(Materials "Brickyard" ([], 2) (Clay 2)),(Materials "Glass blowers" ([], 0) (Glass 1)),(Commercial "Stone reserve" ([], 3) 0 (Price (Stone 0)))] == 2

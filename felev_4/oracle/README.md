@@ -1,0 +1,1 @@
+Jelentkezés: https://pcf.hu/oracle-junior-program/
