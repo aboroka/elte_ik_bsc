@@ -1,7 +1,7 @@
 ELTE IK, pti bsc-s anygaok, zh-k, minta zh-k, vizsgák, beadandók.
 3. félévtől B szakirány
 
-Csak saját felelősségre, nem minden jegyzet/megoldás tökéletes. Amit felraktam ide, az el lett fogadva (ha nem azt megjelöltem, vagy nyilvánvaló a hiba). 
+Csak saját felelősségre, nem minden jegyzet/megoldás tökéletes. Amilyen feladatot felraktam ide, az el lett fogadva (ha nem azt megjelöltem, vagy nyilvánvaló a hiba). 
 
 Kötválok, szabválok, vagy újra felvett tárgyak:
 | 3. félév                             | 4. félév                                        | 5. félév                                       |
